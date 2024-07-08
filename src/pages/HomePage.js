@@ -24,7 +24,7 @@ const HomePage = () => {
         <div className={`w-full md:w-1/3 border-r border-gray-200 ${selectedChatId ? 'hidden md:block' : ''}`}>
           <ChatList onSelectChat={setSelectedChatId} />
         </div>
-        <div className={`w-full md:w-2/3 flex flex-col ${selectedChatId ? 'block' : 'hidden'}`}>
+        <div className={`w-full md:w-2/3 flex flex-col ${selectedChatId ? 'flex' : 'hidden'}`}>
           {selectedChatId && (
             <>
               <div className="flex items-center bg-blue-500 text-white p-4">
@@ -36,8 +36,12 @@ const HomePage = () => {
                 </button>
                 <h2 className="text-xl font-bold">Chat</h2>
               </div>
-              <MessageView chatId={selectedChatId} />
-              <MessageInput onSendMessage={handleSendMessage} />
+              <div className="flex-grow overflow-auto">
+                <MessageView chatId={selectedChatId} />
+              </div>
+              <div className="flex-shrink-0 border-t border-gray-200">
+                <MessageInput onSendMessage={handleSendMessage} />
+              </div>
             </>
           )}
         </div>
