@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import ChatList from '../components/ChatList';
 import MessageView from '../components/MessageView';
 import Header from '../components/Header';
@@ -9,12 +8,11 @@ const HomePage = () => {
   const [selectedChatId, setSelectedChatId] = useState(null);
 
   const handleSendMessage = (message) => {
-    // Implement sending message logic
     console.log('Send message:', message);
   };
 
   const handleBackToChats = () => {
-    setSelectedChatId(null); // Reset selected chat when going back to chat list
+    setSelectedChatId(null);
   };
 
   return (
