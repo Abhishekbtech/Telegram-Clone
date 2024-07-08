@@ -52,12 +52,12 @@ const MessageView = ({ chatId, name }) => {
 
     return (
         <div className="h-full flex flex-col">
-            <div className="bg-gray-100 p-4 flex justify-between items-center">
+            {/* <div className="bg-gray-100 p-4 flex justify-between items-center">
                 <h2 className="text-lg">{name}</h2>
-            </div>
-            <div className="flex flex-col overflow-y-auto h-full p-4" onScroll={handleScroll}>
+            </div> */}
+            <div className="relative flex flex-col overflow-y-auto h-full p-4" onScroll={handleScroll}>
                 {currentDate && (
-                    <div className="sticky top-0 bg-white p-2 text-center text-gray-500">
+                    <div className="sticky top-0 mx-auto bg-white px-4 py-1 rounded text-center text-gray-500 shadow">
                         {currentDate}
                     </div>
                 )}
@@ -69,7 +69,9 @@ const MessageView = ({ chatId, name }) => {
                     if (index === 0 || date.toDateString() !== prevDate?.toDateString()) {
                         acc.push(
                             <div key={`date-${message.id}`} className="text-center my-2 text-gray-500">
-                                {messageDate}
+                                <div className="inline-block bg-gray-200 px-4 py-1 rounded">
+                                    {messageDate}
+                                </div>
                             </div>
                         );
                     }
