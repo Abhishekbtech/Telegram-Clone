@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const ProfilePage = () => {
     // Dummy user data for illustration purposes
     const user = {
-        name: "John Doe",
-        email: "john.doe@example.com",
-        bio: "Software Engineer at OpenAI",
+        name: "Abhishe Chauhan",
+        email: "chauhan@example.com",
+        bio: "frontEnd Developer",
         avatar: "https://via.placeholder.com/150"
     };
 
